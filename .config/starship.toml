@@ -1,0 +1,53 @@
+format = """
+$cmd_duration$line_break
+$all
+$status$character
+"""
+
+add_newline = false
+
+[status]
+format = "[$symbol \\[Code $status\\] : $common_meaning$signal_name $pipestatus]($style) "
+pipestatus_format = "$pipestatus"
+pipestatus_separator = "and  "
+map_symbol = true
+pipestatus = true
+disabled = false
+
+[cmd_duration]
+format = "\\[took [$duration]($style)\\]"
+style = "bold #f1fa8c"
+disabled = true
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold #8be9fd"
+show_always = true
+
+[hostname]
+style = "bold #bd93f9"
+
+[directory]
+style = "bold #50fa7b"
+truncation_symbol = ".../"
+fish_style_pwd_dir_length = 1
+
+#[character]
+#error_symbol = "[λ](bold #ff5555)"
+#success_symbol = "[λ](bold #50fa7b)"
+
+
+# custom services
+[aws]
+style = "bold #ffb86c"
+
+[git_branch]
+style = "bold #ff79c6"
+
+[git_status]
+style = "bold #ff5555"
+
+# custom environment variable
+#[env_var.SHELL]
+#variable = "SHELL"
+#default = "unknown shell"
